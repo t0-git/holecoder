@@ -11,6 +11,8 @@ python3 holecoder.py -p "<script>alert(1)</script>"
 python3 holecoder.py -f file.txt
 ```
 
+If you want to find what characters are filtered before, you can bruteforce by using [this resource.](https://github.com/t0-git/all_in_one_place/blob/master/Web/Encoding_Obfuscating.md)
+
 ## Support
 
 - Partial URL encoding
