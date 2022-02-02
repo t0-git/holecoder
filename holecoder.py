@@ -72,7 +72,7 @@ def encoder(args):
     encoded = ""
     for char in html_payload:
         if(char in entities):
-            encoded += '&{entities[char]}'
+            encoded += f'&{entities[char]}'
         else:
             encoded += char
     logging.info(f"{encoded}\r\n")
@@ -81,7 +81,7 @@ def encoder(args):
     encoded = ''
     for char in payload:
         if char not in string.ascii_letters and char not in string.digits:
-            encoded += '&#{ord(char)};'
+            encoded += f'&#{ord(char)};'
         else:
             encoded += char
     logging.info("Partial HTML entities decimal encoding:")
@@ -90,7 +90,7 @@ def encoder(args):
     # Full HTML decimal encoding
     encoded = ''
     for char in payload:
-        encoded += '&#{ord(char)};'
+        encoded += f'&#{ord(char)};'
     logging.info("Full HTML entities decimal encoding:")
     logging.info(f"{encoded}\r\n")
     
@@ -98,7 +98,7 @@ def encoder(args):
     encoded = ''
     for char in payload:
         if char not in string.ascii_letters and char not in string.digits:
-            encoded += '&#00000{ord(char)};'
+            encoded += f'&#00000{ord(char)};'
         else:
             encoded += char
     logging.info("Partial HTML entities decimal encoding with five zeros:")
@@ -107,7 +107,7 @@ def encoder(args):
     # Full HTML decimal encoding with five zeros
     encoded = ''
     for char in payload:
-        encoded += '&#00000{ord(char)};'
+        encoded += f'&#00000{ord(char)};'
     logging.info("Full HTML entities decimal encoding with five zeros:")
     logging.info(f"{encoded}\r\n")
     
@@ -115,7 +115,7 @@ def encoder(args):
     encoded = ''
     for char in payload:
         if char not in string.ascii_letters and char not in string.digits:
-            encoded += '&#0000000000{ord(char)};'
+            encoded += f'&#0000000000{ord(char)};'
         else:
             encoded += char
     logging.info("Partial HTML entities decimal encoding with ten zeros:")
@@ -125,7 +125,7 @@ def encoder(args):
     # Full HTML decimal encoding with ten zeros
     encoded = ''
     for char in payload:
-        encoded += '&#0000000000{ord(char)};'
+        encoded += f'&#0000000000{ord(char)};'
     logging.info("Full HTML entities decimal encoding with ten zeros:")
     logging.info(f"{encoded}\r\n")
     
@@ -135,7 +135,7 @@ def encoder(args):
     for char in payload:
         if char not in string.ascii_letters and char not in string.digits:
             hexa = char.encode('latin-1').hex()
-            encoded += '&#x{hexa};'
+            encoded += f'&#x{hexa};'
         else:
             encoded += char
     logging.info("Partial HTML entities hexadecimal encoding:")
@@ -146,7 +146,7 @@ def encoder(args):
     encoded = ''
     for char in payload:
         hexa = char.encode('latin-1').hex()
-        encoded += '&#x{hexa};'
+        encoded += f'&#x{hexa};'
     logging.info("Full HTML entities hexadecimal encoding:")
     logging.info(f"{encoded}\r\n")
     
