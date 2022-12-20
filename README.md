@@ -6,10 +6,17 @@ I wrote this script to encode payloads to try to bypass filters.
 
 Pass your payload directly as a string using `-p "<payload>"` or using the content of a file with `-f <file>`. 
 
-```
+```bash
 python3 holecoder.py -p "<script>alert(1)</script>"
 python3 holecoder.py -f file.txt
 ```
+
+You can also save the payloads inside a file to ingest it in tools easily with `-o <output_file>`.
+
+```bash
+python3 holecode.py -p "<img src=x onerror=console.log("owned")>" -o payloads.txt
+```
+
 
 If you want to find what characters are filtered before, you can bruteforce by using [this resource.](https://github.com/t0-git/all_in_one_place/blob/master/Web/Encoding_Obfuscating.md)
 
