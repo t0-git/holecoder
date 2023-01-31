@@ -58,7 +58,7 @@ def encoder(args):
     for i in payload:
         hexa = i.encode('latin-1').hex()
         percent_encode += f"%{hexa}"
-    stdout_or_not(urllib.parse.quote(urllib.parse.quote(percent_encode)), boolean, output, "Full double URL encoding")
+    stdout_or_not(urllib.parse.quote(percent_encode), boolean, output, "Full double URL encoding")
     
     # Partial HTML entities
     entities = html.escape(payload, quote=True)
